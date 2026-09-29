@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vamsi Sai Krishna Routhu | Cyber Security Analyst</title>
+  <meta name="description" content="Cyber Security Analyst | Network Security | Vulnerability Assessment Portfolio for Vamsi Sai Krishna Routhu">
+  
+  <!-- Google Fonts: Orbitron / Rajdhani / Inter / Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyber-theme">
+  <!-- Background Canvas for Interactive Network Nodes -->
+  <canvas id="cyber-canvas"></canvas>
+  
+  <!-- Scanline & Technical Grid Overlays -->
+  <div class="cyber-scanlines"></div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Top System Telemetry Bar -->
+  <div class="telemetry-bar">
+    <div class="telemetry-inner container">
+      <div class="telemetry-item">
+        <span class="pulse-dot"></span>
+        <span class="telemetry-label">SYSTEM STATE:</span>
+        <span class="telemetry-val highlight">SECURE_ACTIVE</span>
+      </div>
+      <div class="telemetry-item hide-mobile">
+        <span class="telemetry-label">IP_LOCATION:</span>
+        <span class="telemetry-val">VISAKHAPATNAM, IN</span>
+      </div>
+      <div class="telemetry-item hide-mobile">
+        <span class="telemetry-label">SECURITY PROTOCOL:</span>
+        <span class="telemetry-val">TLS 1.3 / AES-256</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-label">TIME_SYNC:</span>
+        <span class="telemetry-val" id="live-time">00:00:00 UTC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Cyber Header / Navigation -->
+  <header class="cyber-header" id="navbar">
+    <div class="header-inner container">
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">VSK</span>
+        <span class="logo-bracket">/&gt;</span>
+        <span class="logo-badge">SEC.OPS</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active"><span class="nav-num">01.</span> HOME</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-num">02.</span> ABOUT</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-num">03.</span> SKILLS</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-num">04.</span> PROJECTS</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-num">05.</span> EXPERIENCE</a></li>
+          <li><a href="#education" class="nav-link"><span class="nav-num">06.</span> EDUCATION</a></li>
+          <li><a href="#certifications" class="nav-link"><span class="nav-num">07.</span> CREDENTIALS</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-num">08.</span> CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://www.linkedin.com/in/ravutu-vamsisai-krishna/" target="_blank" rel="noopener noreferrer" class="btn-cyber-sm" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin-in"></i>
+          <span>LINKEDIN</span>
+        </a>
+        <a href="#contact" class="btn-cyber-sm">
+          <i class="fa-solid fa-terminal"></i>
+          <span>CONTACT</span>
+        </a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobile-nav">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">VSK</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+        <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link"><i class="fa-solid fa-house"></i> <span>HOME</span></a></li>
+        <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user-shield"></i> <span>ABOUT</span></a></li>
+        <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-microchip"></i> <span>SKILLS</span></a></li>
+        <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-folder-open"></i> <span>PROJECTS</span></a></li>
+        <li><a href="#experience" class="mobile-link"><i class="fa-solid fa-briefcase"></i> <span>EXPERIENCE</span></a></li>
+        <li><a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> <span>EDUCATION</span></a></li>
+        <li><a href="#certifications" class="mobile-link"><i class="fa-solid fa-certificate"></i> <span>CERTIFICATIONS</span></a></li>
+        <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> <span>CONTACT</span></a></li>
+        <li><a href="https://www.linkedin.com/in/ravutu-vamsisai-krishna/" target="_blank" rel="noopener noreferrer" class="mobile-link" style="color: var(--accent-green);"><i class="fa-brands fa-linkedin-in"></i> <span>LINKEDIN PROFILE</span></a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <div class="system-tag"><i class="fa-solid fa-shield-halved"></i> DEFENSE READY</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Content (Left) -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="radar-dot"></span>
+            <span class="badge-text">IDENTITY VERIFIED // SOC ANALYST</span>
+          </div>
+
+          <h1 class="hero-name">
+            <span class="name-sub">DEFENSIVE & OFFENSIVE SECURITY</span>
+            <span class="name-main glow-text">Vamsi Sai Krishna</span>
+            <span class="name-last">Routhu</span>
+          </h1>
+
+          <div class="hero-title-box">
+            <div class="title-role">Cyber Security Analyst</div>
+            <div class="title-domains">
+              <span class="domain-tag"><i class="fa-solid fa-network-wired"></i> Network Security</span>
+              <span class="divider">/</span>
+              <span class="domain-tag"><i class="fa-solid fa-bug-slash"></i> Vulnerability Assessment</span>
+            </div>
+          </div>
+
+          <div class="hero-terminal-summary">
+            <div class="terminal-bar-top">
+              <span class="term-btn term-red"></span>
+              <span class="term-btn term-yellow"></span>
+              <span class="term-btn term-green"></span>
+              <span class="term-title">vsk@security-terminal:~/profile$ cat summary.txt</span>
+            </div>
+            <div class="terminal-body">
+              <p class="summary-text">
+                "Cybersecurity and Cloud Computing enthusiast with hands-on experience in ethical hacking, network security, Linux environments, AWS Cloud, and Python development."
+              </p>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-cyber primary-glow">
+              <span class="btn-glitch"></span>
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>VIEW MY PROJECTS</span>
+              <i class="fa-solid fa-arrow-right-long arrow-icon"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ravutu-vamsisai-krishna/" target="_blank" rel="noopener noreferrer" class="btn-cyber secondary-ghost">
+              <i class="fa-brands fa-linkedin-in" style="color: var(--accent-green);"></i>
+              <span>LINKEDIN</span>
+            </a>
+            <a href="#contact" class="btn-cyber secondary-ghost">
+              <i class="fa-solid fa-satellite-dish"></i>
+              <span>CONTACT ME</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-strip">
+            <div class="stat-pill">
+              <i class="fa-solid fa-circle-check accent-green"></i>
+              <span>Ethical Hacking Practice</span>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-circle-check accent-green"></i>
+              <span>Log Incident Analysis</span>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-circle-check accent-green"></i>
+              <span>AWS Cloud Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Cyber Visual (Right) -->
+        <div class="hero-visual-wrapper">
+          <div class="cyber-hud-container">
+            <!-- Rotating Rings -->
+            <div class="hud-ring outer-ring"></div>
+            <div class="hud-ring middle-ring"></div>
+            <div class="hud-ring inner-ring"></div>
+            <div class="hud-scanner-beam"></div>
+
+            <!-- Central Glowing Security Shield -->
+            <div class="hud-shield-core">
+              <div class="shield-halo"></div>
+              <svg class="shield-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Shield Base Glow -->
+                <path d="M100 15L175 45V110C175 165 100 215 100 215C100 215 25 165 25 110V45L100 15Z" 
+                      stroke="#00FF66" stroke-width="2.5" fill="rgba(0, 255, 102, 0.04)" class="shield-outer-path"/>
+                
+                <!-- Inner Shield Accent -->
+                <path d="M100 35L155 58V108C155 150 100 190 100 190C100 190 45 150 45 108V58L100 35Z" 
+                      stroke="#00FF66" stroke-width="1.5" stroke-dasharray="6 4" fill="rgba(0, 255, 102, 0.08)"/>
+
+                <!-- Security Keyhole / Lock Core -->
+                <circle cx="100" cy="105" r="14" fill="#00FF66" class="lock-core"/>
+                <path d="M94 112L90 135H110L106 112H94Z" fill="#00FF66" class="lock-body"/>
+                
+                <!-- Circuit Branch Accents inside shield -->
+                <path d="M70 75H55M130 75H145M100 60V42M65 130L50 145M135 130L150 145" stroke="#00FF66" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+
+              <div class="hud-core-pulse"></div>
+            </div>
+
+            <!-- Floating Tech Nodes -->
+            <div class="hud-tag hud-tag-top">
+              <span class="hud-node-dot"></span>
+              <span class="hud-tag-title">SOC_MONITOR</span>
+              <span class="hud-tag-meta">PACKET_INSPECTION_ON</span>
+            </div>
+
+            <div class="hud-tag hud-tag-right">
+              <span class="hud-node-dot"></span>
+              <span class="hud-tag-title">VULN_SCANNER</span>
+              <span class="hud-tag-meta">ANOMALY_DETECTION</span>
+            </div>
+
+            <div class="hud-tag hud-tag-bottom">
+              <span class="hud-node-dot"></span>
+              <span class="hud-tag-title">ENCRYPTION</span>
+              <span class="hud-tag-meta">AES_LOG_CIPHER</span>
+            </div>
+            
+            <div class="hud-tag hud-tag-left">
+              <span class="hud-node-dot"></span>
+              <span class="hud-tag-title">FIREWALL</span>
+              <span class="hud-tag-meta">ACTIVE_FILTERING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT / PROFILE ==================== -->
+    <section class="cyber-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-id-card"></i> SYSTEM_PROFILE
+          </div>
+          <h2 class="section-title">WHO AM I?</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Profile Card -->
+          <div class="cyber-card profile-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="profile-header">
+              <div class="profile-avatar-wrapper">
+                <div class="avatar-ring"></div>
+                <div class="avatar-box">
+                  <i class="fa-solid fa-user-secret avatar-icon"></i>
+                </div>
+                <div class="avatar-status-badge">
+                  <i class="fa-solid fa-shield"></i>
+                </div>
+              </div>
+
+              <div class="profile-meta">
+                <h3 class="profile-title">Vamsi Sai Krishna Routhu</h3>
+                <span class="profile-subtitle">Cyber Security Analyst</span>
+                <div class="profile-location">
+                  <i class="fa-solid fa-location-dot"></i> Visakhapatnam, Andhra Pradesh, India
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-body">
+              <p class="profile-desc">
+                Cybersecurity and Cloud Computing enthusiast with hands-on experience in ethical hacking, network security, Linux environments, AWS Cloud, and Python development. Skilled in Wireshark, Nmap, OSINT, and vulnerability assessment. Seeking an entry-level cybersecurity or cloud security role to apply technical and analytical skills in real-world environments.
+              </p>
+
+              <div class="profile-highlights-grid">
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Domain</span>
+                    <span class="hl-val">Cybersecurity</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-solid fa-cloud"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Platform</span>
+                    <span class="hl-val">AWS Cloud</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-solid fa-user-ninja"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Practice</span>
+                    <span class="hl-val">Ethical Hacking</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-solid fa-network-wired"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Architecture</span>
+                    <span class="hl-val">Network Security</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-brands fa-linux"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Environment</span>
+                    <span class="hl-val">Linux / Kali / Parrot</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-brands fa-python"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Language</span>
+                    <span class="hl-val">Python Development</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-solid fa-radar"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Assessment</span>
+                    <span class="hl-val">Vulnerability Assessment</span>
+                  </div>
+                </div>
+
+                <div class="highlight-item">
+                  <div class="hl-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                  <div class="hl-text">
+                    <span class="hl-label">Strength</span>
+                    <span class="hl-val">Problem-Solving</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Highlights & Core Directives -->
+          <div class="about-sidebar">
+            <!-- Objective Terminal -->
+            <div class="cyber-card terminal-card">
+              <div class="terminal-bar-top">
+                <span class="term-btn term-red"></span>
+                <span class="term-btn term-yellow"></span>
+                <span class="term-btn term-green"></span>
+                <span class="term-title">MISSION_STATEMENT.sh</span>
+              </div>
+              <div class="terminal-code-block">
+                <div class="code-line"><span class="c-dim"># Professional Profile & Philosophy</span></div>
+                <div class="code-line"><span class="c-green">TARGET:</span> Entry-level Cybersecurity & Cloud Security</div>
+                <div class="code-line"><span class="c-green">APPROACH:</span> Multi-layered defense, rigorous traffic analysis & forensic log inspection</div>
+                <div class="code-line"><span class="c-green">SPECIALIZATION:</span> Wireshark, Nmap Reconnaissance, OSINT investigation, Linux-hardened systems & AWS Cloud</div>
+                <div class="code-line"><span class="c-green">ACADEMIC_TRACK:</span> B Tech in Cyber Security (GPA: 7.93)</div>
+              </div>
+            </div>
+
+            <!-- Quick Specs List -->
+            <div class="cyber-card quick-specs-card">
+              <h4 class="specs-title"><i class="fa-solid fa-fingerprint accent-green"></i> CORE TRAITS & DISCIPLINE</h4>
+              <ul class="specs-list">
+                <li>
+                  <i class="fa-solid fa-angle-right bullet-icon"></i>
+                  <div>
+                    <strong>Hands-on Simulation:</strong> Practiced in Kali Linux, Metasploitable2, and VirtualBox environments.
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-angle-right bullet-icon"></i>
+                  <div>
+                    <strong>Threat Insight:</strong> Familiarity with SQL Injection, phishing schemes, malware dynamics, and brute-force mitigation.
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-angle-right bullet-icon"></i>
+                  <div>
+                    <strong>Security Automation:</strong> Leveraging Python algorithms and machine learning for automated anomaly detection.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. CYBERSECURITY SKILLS ==================== -->
+    <section class="cyber-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-microchip"></i> ARSENAL_MATRIX
+          </div>
+          <h2 class="section-title">CYBERSECURITY SKILLS</h2>
+          <p class="section-subtitle">Categorized competencies & tools verified directly from field training & academic research.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Skills Filter Tabs -->
+        <div class="skills-filter-bar" id="skills-filter-bar">
+          <button class="filter-tab active" data-filter="all">ALL SKILLS</button>
+          <button class="filter-tab" data-filter="security">CYBER SECURITY</button>
+          <button class="filter-tab" data-filter="programming">PROGRAMMING</button>
+          <button class="filter-tab" data-filter="web">WEB TECH</button>
+          <button class="filter-tab" data-filter="cloud">CLOUD & SYSTEMS</button>
+          <button class="filter-tab" data-filter="concepts">CORE CONCEPTS</button>
+        </div>
+
+        <!-- Skills Grid Layout -->
+        <div class="skills-category-grid">
+          
+          <!-- Category 1: Cyber Security Tools -->
+          <div class="cyber-card skill-cat-card" data-category="security">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h3 class="cat-title">Cyber Security Tools</h3>
+                <span class="cat-count">4 Verified Tools</span>
+              </div>
+            </div>
+            <div class="skill-chips-list">
+              <div class="skill-chip">
+                <i class="fa-solid fa-water-ladder chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Wireshark</span>
+                  <span class="chip-detail">Traffic Analysis & Packet Inspection</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-radar chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Nmap</span>
+                  <span class="chip-detail">Port Scanning & Network Reconnaissance</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-eye chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">OSINT</span>
+                  <span class="chip-detail">Open Source Intelligence Gathering</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-linux chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Kali Linux</span>
+                  <span class="chip-detail">Penetration Testing & Security Utilities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Programming Languages -->
+          <div class="cyber-card skill-cat-card" data-category="programming">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box"><i class="fa-solid fa-code"></i></div>
+              <div>
+                <h3 class="cat-title">Programming</h3>
+                <span class="cat-count">3 Core Languages</span>
+              </div>
+            </div>
+            <div class="skill-chips-list">
+              <div class="skill-chip">
+                <i class="fa-brands fa-python chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Python</span>
+                  <span class="chip-detail">Tool Development, Automation & ML</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-java chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Java</span>
+                  <span class="chip-detail">Object-Oriented Software Programming</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-c chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">C</span>
+                  <span class="chip-detail">Low-Level Systems & Memory Concepts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Web Technologies -->
+          <div class="cyber-card skill-cat-card" data-category="web">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box"><i class="fa-solid fa-globe"></i></div>
+              <div>
+                <h3 class="cat-title">Web Technologies</h3>
+                <span class="cat-count">3 Technologies</span>
+              </div>
+            </div>
+            <div class="skill-chips-list">
+              <div class="skill-chip">
+                <i class="fa-brands fa-html5 chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">HTML</span>
+                  <span class="chip-detail">Semantic Web Architecture</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-css3-alt chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">CSS</span>
+                  <span class="chip-detail">Interface Design & Styling</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-js chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">JavaScript</span>
+                  <span class="chip-detail">Dynamic Front-End Scripting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Cloud Platforms & Version Control -->
+          <div class="cyber-card skill-cat-card" data-category="cloud">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+              <div>
+                <h3 class="cat-title">Cloud & Version Control</h3>
+                <span class="cat-count">3 Technologies</span>
+              </div>
+            </div>
+            <div class="skill-chips-list">
+              <div class="skill-chip">
+                <i class="fa-brands fa-aws chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">AWS Cloud</span>
+                  <span class="chip-detail">Cloud Infrastructure & Security Services</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-git-alt chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Git</span>
+                  <span class="chip-detail">Distributed Version Control</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-github chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">GitHub</span>
+                  <span class="chip-detail">Repository Management & CI Workflows</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 5: Operating Systems -->
+          <div class="cyber-card skill-cat-card" data-category="cloud">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box"><i class="fa-solid fa-hard-drive"></i></div>
+              <div>
+                <h3 class="cat-title">Operating Systems</h3>
+                <span class="cat-count">3 Environments</span>
+              </div>
+            </div>
+            <div class="skill-chips-list">
+              <div class="skill-chip">
+                <i class="fa-brands fa-linux chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Kali Linux</span>
+                  <span class="chip-detail">Offensive Security & Pen-Testing OS</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-crow chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Parrot OS</span>
+                  <span class="chip-detail">Security Hardened & Forensics Platform</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-brands fa-windows chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Windows</span>
+                  <span class="chip-detail">Enterprise Workstation & Security Env</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 6: Concepts & Problem-Solving -->
+          <div class="cyber-card skill-cat-card" data-category="concepts">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+              <div>
+                <h3 class="cat-title">Security Concepts</h3>
+                <span class="cat-count">Core Principles</span>
+              </div>
+            </div>
+            <div class="skill-chips-list">
+              <div class="skill-chip">
+                <i class="fa-solid fa-network-wired chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Network Security</span>
+                  <span class="chip-detail">Defense-in-depth, perimeter & packet control</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-user-secret chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Ethical Hacking</span>
+                  <span class="chip-detail">Assessment of security postures & vectors</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-magnifying-glass-chart chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Vulnerability Assessment</span>
+                  <span class="chip-detail">Identification & prioritization of flaws</span>
+                </div>
+              </div>
+              <div class="skill-chip">
+                <i class="fa-solid fa-brain chip-icon"></i>
+                <div class="chip-info">
+                  <span class="chip-name">Problem-Solving</span>
+                  <span class="chip-detail">Ability to analyze issues and develop practical solutions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. PROJECTS ==================== -->
+    <section class="cyber-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-terminal"></i> DIRECT_RESEARCH
+          </div>
+          <h2 class="section-title">SECURITY PROJECTS</h2>
+          <p class="section-subtitle">Hands-on cyber defense & research implementations built using Python & Security toolsets.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 01 -->
+          <div class="cyber-card project-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="project-header">
+              <div class="project-num-badge">PROJECT // 01</div>
+              <div class="project-type-tag"><i class="fa-solid fa-fingerprint"></i> INCIDENT FORENSICS</div>
+            </div>
+
+            <div class="project-icon-box">
+              <div class="p-icon-circle">
+                <i class="fa-solid fa-file-shield"></i>
+              </div>
+              <div class="p-tech-badge">PYTHON + ML</div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">LOG BASED DIGITAL FORENSIC TOOL</h3>
+              <div class="project-subtitle">"For Incident Analysis"</div>
+
+              <p class="project-summary">
+                A specialized Python-based security tool engineered to analyze complex system logs, detect suspicious anomalies through machine learning, and accelerate forensic investigations.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  <i class="fa-solid fa-circle-chevron-right bullet-icon"></i>
+                  <span>Developed a Python-based digital forensic tool to analyze system logs and identify security-related events.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-chevron-right bullet-icon"></i>
+                  <span>Implemented machine learning techniques for anomaly detection and threat identification in log data.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-chevron-right bullet-icon"></i>
+                  <span>Automated log analysis to support incident response and digital forensic investigations efficiently.</span>
+                </li>
+              </ul>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Digital Forensics</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Log Analysis</span>
+                <span class="tech-tag">Anomaly Detection</span>
+                <span class="tech-tag">Incident Response</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn-cyber-outline" onclick="openProjectModal('forensic')">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span>PROJECT DETAILS</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 02 -->
+          <div class="cyber-card project-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="project-header">
+              <div class="project-num-badge">PROJECT // 02</div>
+              <div class="project-type-tag warning-tag"><i class="fa-solid fa-shield-virus"></i> EDUCATIONAL / RESEARCH</div>
+            </div>
+
+            <div class="project-icon-box">
+              <div class="p-icon-circle">
+                <i class="fa-solid fa-keyboard"></i>
+              </div>
+              <div class="p-tech-badge">PYTHON + CRYPTO</div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">KEYSTROKE MONITORING SECURITY RESEARCH TOOL</h3>
+              <div class="project-subtitle">"Educational / Security Research Project"</div>
+
+              <p class="project-summary">
+                An educational security research project designed to explore keystroke event capture mechanics, understand credential theft vectors, and study encrypted log storage for threat defense.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  <i class="fa-solid fa-circle-chevron-right bullet-icon"></i>
+                  <span>Developed a Python-based keylogger for educational purposes to understand keystroke logging mechanisms.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-chevron-right bullet-icon"></i>
+                  <span>Implemented keyboard event capturing using Python libraries.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-chevron-right bullet-icon"></i>
+                  <span>Designed functionality to log keystrokes securely into encrypted log files.</span>
+                </li>
+              </ul>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Keystroke Dynamics</span>
+                <span class="tech-tag">Event Capturing</span>
+                <span class="tech-tag">File Encryption</span>
+                <span class="tech-tag">Security Research</span>
+                <span class="tech-tag">Ethical Hacking</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn-cyber-outline" onclick="openProjectModal('keystroke')">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span>PROJECT DETAILS</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. EXPERIENCE / INTERNSHIPS ==================== -->
+    <section class="cyber-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-shield-halved"></i> MISSION_LOGS
+          </div>
+          <h2 class="section-title">FIELD EXPERIENCE</h2>
+          <p class="section-subtitle">Real-world internships in cybersecurity operations & web development architectures.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Timeline Item 01 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="node-pulse"></div>
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            
+            <div class="timeline-card cyber-card">
+              <div class="card-corner corner-tl"></div>
+              <div class="card-corner corner-tr"></div>
+              <div class="card-corner corner-bl"></div>
+              <div class="card-corner corner-br"></div>
+
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge">INTERNSHIP // 01</span>
+                  <h3 class="role-title">Cybersecurity Intern</h3>
+                  <div class="company-name"><i class="fa-regular fa-building"></i> ApexPlanet</div>
+                </div>
+                <div class="timeline-status active-status">
+                  <span class="pulse-dot"></span>
+                  <span>COMPLETED</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <ul class="experience-list">
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Worked with <strong>Kali Linux</strong>, <strong>Metasploitable2</strong>, and <strong>VirtualBox</strong> for ethical hacking simulations.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Analyzed network traffic using <strong>Wireshark</strong>.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Conducted reconnaissance using <strong>Nmap</strong> and <strong>OSINT</strong> tools.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Learned concepts including <strong>SQL Injection</strong>, <strong>phishing analysis</strong>, <strong>malware</strong>, and <strong>brute-force attacks</strong>.</span>
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="tech-tag">Kali Linux</span>
+                  <span class="tech-tag">Metasploitable2</span>
+                  <span class="tech-tag">VirtualBox</span>
+                  <span class="tech-tag">Wireshark</span>
+                  <span class="tech-tag">Nmap</span>
+                  <span class="tech-tag">OSINT</span>
+                  <span class="tech-tag">SQL Injection</span>
+                  <span class="tech-tag">Phishing Analysis</span>
+                  <span class="tech-tag">Malware</span>
+                  <span class="tech-tag">Brute-Force</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 02 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="node-pulse"></div>
+              <i class="fa-solid fa-code"></i>
+            </div>
+            
+            <div class="timeline-card cyber-card">
+              <div class="card-corner corner-tl"></div>
+              <div class="card-corner corner-tr"></div>
+              <div class="card-corner corner-bl"></div>
+              <div class="card-corner corner-br"></div>
+
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge">INTERNSHIP // 02</span>
+                  <h3 class="role-title">Full Stack Web Development</h3>
+                  <div class="company-name"><i class="fa-regular fa-building"></i> Main Flow Services</div>
+                </div>
+                <div class="timeline-status active-status">
+                  <span class="pulse-dot"></span>
+                  <span>COMPLETED</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <ul class="experience-list">
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Gained knowledge in <strong>Hosting and maintaining content</strong> on the web.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Applied <strong>Security and safety measures</strong> with complex systems and Source Code.</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-caret-right exp-arrow"></i>
+                    <span>Developed and deployed <strong>full-stack web applications</strong>.</span>
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="tech-tag">Full Stack Web Development</span>
+                  <span class="tech-tag">Web Hosting</span>
+                  <span class="tech-tag">Source Code Security</span>
+                  <span class="tech-tag">Web Application Deployment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. EDUCATION ==================== -->
+    <section class="cyber-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-graduation-cap"></i> ACADEMIC_RECORD
+          </div>
+          <h2 class="section-title">EDUCATION</h2>
+          <p class="section-subtitle">Academic foundations in Cyber Security, Mathematics, Physics, and Chemistry.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="education-grid">
+          <!-- Degree 01 -->
+          <div class="cyber-card edu-card highlight-edu">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="edu-top-meta">
+              <span class="edu-period"><i class="fa-regular fa-calendar"></i> Sep '22 — '26</span>
+              <span class="edu-gpa-badge"><i class="fa-solid fa-chart-line"></i> GPA: 7.93</span>
+            </div>
+
+            <div class="edu-icon-banner">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h3 class="edu-degree">B Tech — Bachelor of Technology in Cyber Security</h3>
+            <div class="edu-institution">
+              <i class="fa-solid fa-building-columns"></i> Raghu Institute of Technology
+            </div>
+            <div class="edu-loc">
+              <i class="fa-solid fa-location-dot"></i> Visakhapatnam, India
+            </div>
+
+            <div class="edu-footer-tag">
+              <i class="fa-solid fa-shield"></i> Core Specialization: Cyber Security Architecture & Protocols
+            </div>
+          </div>
+
+          <!-- Degree 02 -->
+          <div class="cyber-card edu-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="edu-top-meta">
+              <span class="edu-period"><i class="fa-regular fa-calendar"></i> Apr '20 — May '22</span>
+            </div>
+
+            <div class="edu-icon-banner">
+              <i class="fa-solid fa-square-root-variable"></i>
+            </div>
+
+            <h3 class="edu-degree">Intermediate in MPC</h3>
+            <div class="edu-institution">
+              <i class="fa-solid fa-building-columns"></i> Narayana College
+            </div>
+            <div class="edu-loc">
+              <i class="fa-solid fa-location-dot"></i> Visakhapatnam, India
+            </div>
+
+            <div class="edu-footer-tag">
+              <i class="fa-solid fa-book-open"></i> Mathematics, Physics, Chemistry Curriculum
+            </div>
+          </div>
+
+          <!-- Degree 03 -->
+          <div class="cyber-card edu-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="edu-top-meta">
+              <span class="edu-period"><i class="fa-regular fa-calendar"></i> Jan '19 — Jan '20</span>
+            </div>
+
+            <div class="edu-icon-banner">
+              <i class="fa-solid fa-school"></i>
+            </div>
+
+            <h3 class="edu-degree">Central Board Of Secondary Education</h3>
+            <div class="edu-institution">
+              <i class="fa-solid fa-building-columns"></i> Narayana School
+            </div>
+            <div class="edu-loc">
+              <i class="fa-solid fa-location-dot"></i> Visakhapatnam, India
+            </div>
+
+            <div class="edu-footer-tag">
+              <i class="fa-solid fa-award"></i> Secondary School Education
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CERTIFICATIONS ==================== -->
+    <section class="cyber-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-certificate"></i> AUTHENTICATED_CREDENTIALS
+          </div>
+          <h2 class="section-title">CERTIFICATIONS & CREDENTIALS</h2>
+          <p class="section-subtitle">Formal accreditations, certifications, and industry job simulations verified from resume records.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1 -->
+          <div class="cyber-card cert-card feature-cert">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+            
+            <div class="cert-status-badge"><i class="fa-solid fa-shield"></i> TARGET / VALIDITY: Jun '26</div>
+            
+            <div class="cert-icon-wrapper">
+              <i class="fa-solid fa-user-secret"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">Certified Ethical Hacker</h3>
+              <div class="cert-issuer">Jun '26</div>
+              <p class="cert-desc">Core competencies in penetration testing techniques, ethical hacking methodology, and security assessment.</p>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cyber-card cert-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="cert-icon-wrapper">
+              <i class="fa-brands fa-python"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">The Joy of Computing using Python</h3>
+              <div class="cert-issuer"><i class="fa-solid fa-building-columns"></i> National Programme on Technology Enhanced Learning</div>
+              <p class="cert-desc">Oct '01 • Comprehensive Python algorithmic programming, computation logic & data handling.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cyber-card cert-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="cert-icon-wrapper">
+              <i class="fa-brands fa-java"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">PROGRAMMING IN JAVA</h3>
+              <div class="cert-issuer"><i class="fa-solid fa-building-columns"></i> National Programme on Technology Enhanced Learning</div>
+              <p class="cert-desc">Jan '01 • Object-oriented programming principles, abstractions, and software development in Java.</p>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cyber-card cert-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="cert-icon-wrapper">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">Cryptography and Network Security</h3>
+              <div class="cert-issuer"><i class="fa-solid fa-building-columns"></i> National Programme on Technology Enhanced Learning</div>
+              <p class="cert-desc">Jan '01 • Cryptographic algorithms, public/private key ciphers, integrity hashing & network defense.</p>
+            </div>
+          </div>
+
+          <!-- Cert 5 -->
+          <div class="cyber-card cert-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="cert-icon-wrapper">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">AWS Certified Cloud Practitioner</h3>
+              <div class="cert-issuer"><i class="fa-solid fa-cloud"></i> Amazon Web Services</div>
+              <p class="cert-desc">Cloud architecture fundamentals, AWS shared responsibility security model, compliance, and core services.</p>
+            </div>
+          </div>
+
+          <!-- Cert 6 -->
+          <div class="cyber-card cert-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="cert-icon-wrapper">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">Introduction To Cybersecurity</h3>
+              <div class="cert-issuer"><i class="fa-solid fa-shield"></i> Cisco Networking Academy</div>
+              <p class="cert-desc">Foundations of cyber threats, defensive controls, networking safeguards, and privacy principles.</p>
+            </div>
+          </div>
+
+          <!-- Cert 7 -->
+          <div class="cyber-card cert-card">
+            <div class="card-corner corner-tl"></div>
+            <div class="card-corner corner-tr"></div>
+            <div class="card-corner corner-bl"></div>
+            <div class="card-corner corner-br"></div>
+
+            <div class="cert-icon-wrapper">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div class="cert-content">
+              <h3 class="cert-title">Deloitte Cyber Job Simulation</h3>
+              <div class="cert-issuer"><i class="fa-solid fa-user-shield"></i> Deloitte Forage</div>
+              <p class="cert-desc">Practical enterprise cybersecurity job simulation covering real-world client defense and security analytics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. CONTACT SECTION ==================== -->
+    <section class="cyber-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-satellite"></i> DIRECT_COMMUNICATION
+          </div>
+          <h2 class="section-title">LET'S CONNECT</h2>
+          <p class="section-subtitle">Reach out for cybersecurity analysis opportunities, vulnerability assessment roles, or technical collaborations.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-wrapper-grid">
+          <!-- Left: Contact Channels & Resume Info -->
+          <div class="contact-info-panel">
+            <div class="cyber-card contact-card">
+              <div class="card-corner corner-tl"></div>
+              <div class="card-corner corner-tr"></div>
+              <div class="card-corner corner-bl"></div>
+              <div class="card-corner corner-br"></div>
+
+              <h3 class="contact-panel-title">
+                <i class="fa-solid fa-tower-broadcast accent-green"></i> TRANSMISSION CHANNELS
+              </h3>
+              <p class="contact-panel-desc">
+                Feel free to connect directly via email, phone, or LinkedIn. All channels are monitored regularly.
+              </p>
+
+              <div class="contact-methods">
+                <!-- Email -->
+                <div class="method-item">
+                  <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="method-details">
+                    <span class="method-label">EMAIL ADDRESS</span>
+                    <a href="mailto:vamsisaikrishnarouthu@gmail.com" class="method-val">vamsisaikrishnarouthu@gmail.com</a>
+                  </div>
+                  <button class="copy-btn" onclick="copyToClipboard('vamsisaikrishnarouthu@gmail.com', 'Email copied to clipboard!')" title="Copy Email">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <!-- Phone -->
+                <div class="method-item">
+                  <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div class="method-details">
+                    <span class="method-label">PHONE NUMBER</span>
+                    <a href="tel:+918639009318" class="method-val">+91 8639009318</a>
+                  </div>
+                  <button class="copy-btn" onclick="copyToClipboard('+918639009318', 'Phone number copied to clipboard!')" title="Copy Phone">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                </div>
+
+                <!-- Location -->
+                <div class="method-item">
+                  <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                  <div class="method-details">
+                    <span class="method-label">LOCATION</span>
+                    <span class="method-val">Visakhapatnam, Andhra Pradesh, India</span>
+                  </div>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="method-item">
+                  <div class="method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                  <div class="method-details">
+                    <span class="method-label">LINKEDIN PROFILE</span>
+                    <a href="https://www.linkedin.com/in/ravutu-vamsisai-krishna/" target="_blank" rel="noopener noreferrer" class="method-val" style="color: var(--accent-green); text-decoration: underline;">ravutu-vamsisai-krishna</a>
+                  </div>
+                  <a href="https://www.linkedin.com/in/ravutu-vamsisai-krishna/" target="_blank" rel="noopener noreferrer" class="btn-cyber-xs" title="Open LinkedIn Profile">
+                    <span>CONNECT</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="security-clearance-box">
+              <div class="sc-icon"><i class="fa-solid fa-lock"></i></div>
+              <div class="sc-text">
+                <strong>ENCRYPTION GUARANTEE</strong>
+                <span>All communication transmissions strictly respect professional privacy standards.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form-panel">
+            <div class="cyber-card form-card">
+              <div class="card-corner corner-tl"></div>
+              <div class="card-corner corner-tr"></div>
+              <div class="card-corner corner-bl"></div>
+              <div class="card-corner corner-br"></div>
+
+              <div class="form-header">
+                <span class="form-tag"><i class="fa-solid fa-terminal"></i> ENCRYPTED_MESSAGE_PAYLOAD</span>
+                <h3 class="form-title">Send a Direct Message</h3>
+              </div>
+
+              <form id="contact-form" class="cyber-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                  <label for="sender-name">
+                    <span class="label-prefix">[01]</span> YOUR NAME:
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-user input-icon"></i>
+                    <input type="text" id="sender-name" name="name" required placeholder="e.g. John Doe / Security Recruiter" class="cyber-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-email">
+                    <span class="label-prefix">[02]</span> YOUR EMAIL:
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope input-icon"></i>
+                    <input type="email" id="sender-email" name="email" required placeholder="e.g. john@organization.com" class="cyber-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-subject">
+                    <span class="label-prefix">[03]</span> SUBJECT:
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-tag input-icon"></i>
+                    <input type="text" id="sender-subject" name="subject" required placeholder="e.g. Cyber Security Analyst Role / Collaboration" class="cyber-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-message">
+                    <span class="label-prefix">[04]</span> MESSAGE CONTENT:
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-message input-icon-textarea"></i>
+                    <textarea id="sender-message" name="message" rows="5" required placeholder="State your objective or project details here..." class="cyber-textarea"></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-cyber primary-glow submit-btn">
+                  <span class="btn-glitch"></span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>SEND MESSAGE</span>
+                  <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                </button>
+              </form>
+
+              <div id="form-feedback" class="form-feedback-msg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 9. FOOTER ==================== -->
+  <footer class="cyber-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-logo footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">VSK</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+        <div class="footer-domains">
+          <span>Cyber Security</span>
+          <span class="footer-dot">•</span>
+          <span>Network Security</span>
+          <span class="footer-dot">•</span>
+          <span>Vulnerability Assessment</span>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <p class="copyright-text">
+          &copy; 2026 Vamsi Sai Krishna Routhu. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/ravutu-vamsisai-krishna/" target="_blank" rel="noopener noreferrer" class="btn-cyber-xs" style="margin-right: 12px;">
+          <i class="fa-brands fa-linkedin-in"></i> <span>LINKEDIN</span>
+        </a>
+        <a href="#hero" class="back-to-top-btn" aria-label="Back to Top">
+          <span>BACK TO TOP</span>
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div class="cyber-modal-overlay" id="project-modal" onclick="closeModalOnOverlay(event)">
+    <div class="cyber-modal-card cyber-card">
+      <div class="card-corner corner-tl"></div>
+      <div class="card-corner corner-tr"></div>
+      <div class="card-corner corner-bl"></div>
+      <div class="card-corner corner-br"></div>
+
+      <button class="modal-close-btn" onclick="closeProjectModal()">&times;</button>
+      
+      <div id="modal-content">
+        <!-- Dynamically injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="cyber-toast" class="cyber-toast">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-text">Action Completed</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
